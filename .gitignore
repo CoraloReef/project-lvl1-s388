@@ -1,0 +1,4 @@
+.vscode
+dist
+jsconfig.json
+node_modules
