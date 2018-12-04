@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/CoraloReef/project-lvl1-s388/issues"
   },
-  "homepage": "https://github.com/CoraloReef/project-lvl1-s388#readme",,
+  "homepage": "https://github.com/CoraloReef/project-lvl1-s388#readme",
   "dependencies": {
     "readline-sync": "^1.4.9"
   },
