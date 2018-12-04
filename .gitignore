@@ -1,4 +1,5 @@
 .vscode
 dist
+.log
 jsconfig.json
 node_modules

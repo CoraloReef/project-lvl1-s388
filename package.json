@@ -1,8 +1,8 @@
 {
   "name": "brain-games-coraloreef",
   "version": "0.1.1",
-  "description": "",
-  "main": "dist/index.js",
+  "description": "Brain Games - Game That Train Your Mind",
+  "keywords": ["brain", "games", "training"],
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
@@ -23,12 +23,14 @@
   "bugs": {
     "url": "https://github.com/CoraloReef/project-lvl1-s388/issues"
   },
-  "homepage": "https://github.com/CoraloReef/project-lvl1-s388#readme",
+  "homepage": "https://github.com/CoraloReef/project-lvl1-s388#readme",,
   "dependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
-    "@babel/node": "^7.0.0",
-    "@babel/preset-env": "^7.1.6",
     "readline-sync": "^1.4.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/node": "^7.2.0",
+    "@babel/preset-env": "^7.2.0"
   }
 }
