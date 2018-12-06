@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import { greeting, getUserName } from '..';
+import { brainGames } from '..';
 
-greeting();
-getUserName();
+brainGames();
