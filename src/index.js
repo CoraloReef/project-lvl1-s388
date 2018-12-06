@@ -1,5 +1,8 @@
 import readlineSync from 'readline-sync';
 
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+const isEven = n => n % 2 === 0;
+
 const greeting = (description) => {
   console.log('Welcome to the Brain Games!');
 
@@ -17,11 +20,10 @@ const getUserName = () => {
   return userName;
 };
 
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-
-const gameEven = (n) => {
+const gameEven = (n, userName) => {
   if (n === 0) {
-    return true;
+    console.log(`Congratulations, ${userName}!`);
+    return;
   }
 
   const question = getRandomInt(1, 20);
@@ -30,23 +32,15 @@ const gameEven = (n) => {
 
   const answer = readlineSync.question('Your answer: ');
 
-  const correctAnswer = (question % 2 === 0) ? 'yes' : 'no';
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
 
   if (answer === correctAnswer) {
     console.log('Correct!');
-    return gameEven(n - 1);
+    gameEven(n - 1, userName);
+    return;
   }
-  return false;
+  console.log(`Let's try again, ${userName}!`);
 };
-
-const getResult = (result, userName) => {
-  if (result) {
-    console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log(`Let's try again, ${userName}!`);
-  }
-};
-
 
 export const brainGames = () => {
   greeting();
@@ -55,8 +49,6 @@ export const brainGames = () => {
 
 export const brainEven = () => {
   greeting('Answer "yes" if number even otherwise answer "no".');
-
   const userName = getUserName();
-  const result = gameEven(3);
-  getResult(result, userName);
+  gameEven(3, userName);
 };
