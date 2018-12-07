@@ -1,11 +1,16 @@
-import {
-  gameEngine, greeting, getUserName, getRandomInt, getGcd, showResult,
-} from '..';
-import { cons } from 'hexlet-pairs';
+import gameEngine from '..';
+import getRandomInt from '../utils';
+import { cons, car, cdr } from 'hexlet-pairs';
+
+const getGcd = (pair) => {
+  if (cdr(pair) === 0) {
+    return car(pair);
+  }
+  return getGcd(cons(cdr(pair), car(pair) % cdr(pair)));
+};
 
 const brainGcd = () => {
-  greeting('Find the greatest common divisor of given numbers.');
-  const userName = getUserName();
+  const description = 'Find the greatest common divisor of given numbers.';
 
   const roundGenerator = () => {
     const firstNumber = getRandomInt(1, 100);
@@ -16,7 +21,7 @@ const brainGcd = () => {
     return cons(question, correctAnswer);
   };
 
-  const result = gameEngine(3, roundGenerator);
-  showResult(result, userName);
+  gameEngine(roundGenerator, description);
 };
+
 export default brainGcd;

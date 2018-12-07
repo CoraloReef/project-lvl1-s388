@@ -1,11 +1,11 @@
-import {
-  gameEngine, greeting, getUserName, getRandomInt, isEven, showResult,
-} from '..';
+import gameEngine from '..';
+import getRandomInt from '../utils';
 import { cons } from 'hexlet-pairs';
 
+const isEven = n => n % 2 === 0;
+
 const brainEven = () => {
-  greeting('Answer "yes" if number even otherwise answer "no".');
-  const userName = getUserName();
+  const description = 'Answer "yes" if number even otherwise answer "no".';
 
   const roundGenerator = () => {
     const question = getRandomInt(1, 20);
@@ -13,7 +13,7 @@ const brainEven = () => {
     return cons(question, correctAnswer);
   };
 
-  const result = gameEngine(3, roundGenerator);
-  showResult(result, userName);
+  gameEngine(roundGenerator, description);
 };
+
 export default brainEven;

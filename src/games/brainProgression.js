@@ -1,11 +1,16 @@
-import {
-  gameEngine, greeting, getUserName, getRandomInt, showResult, makeProgression,
-} from '..';
+import gameEngine from '..';
+import getRandomInt from '../utils';
 import { cons } from 'hexlet-pairs';
 
+const makeProgression = (start, step, length, hiddenNumber) => {
+  if (length - 1 === 0) {
+    return `${(hiddenNumber !== length) ? start : '..'}`;
+  }
+  return `${(hiddenNumber !== length) ? start : '..'} ${makeProgression(start + step, step, length - 1, hiddenNumber)}`;
+};
+
 const brainProgression = () => {
-  greeting('Find the greatest common divisor of given numbers.');
-  const userName = getUserName();
+  const description = 'What number is missing in the progression?';
 
   const roundGenerator = () => {
     const firstNumber = getRandomInt(1, 20);
@@ -17,7 +22,7 @@ const brainProgression = () => {
     return cons(question, correctAnswer);
   };
 
-  const result = gameEngine(3, roundGenerator);
-  showResult(result, userName);
+  gameEngine(roundGenerator, description);
 };
+
 export default brainProgression;

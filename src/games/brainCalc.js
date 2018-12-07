@@ -1,11 +1,30 @@
-import {
-  gameEngine, greeting, getUserName, getRandomInt, getRandomOperation, resultExpression, showResult,
-} from '..';
+import gameEngine from '..';
+import getRandomInt from '../utils';
 import { cons } from 'hexlet-pairs';
 
+const getRandomOperation = () => {
+  switch (getRandomInt(1, 4)) {
+    case 1:
+      return '+';
+    case 2:
+      return '-';
+    default:
+      return '*';
+  }
+};
+const resultExpression = (num1, num2, operation) => {
+  switch (operation) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    default:
+      return num1 * num2;
+  }
+};
+
 const brainCalc = () => {
-  greeting('What is the result of the expression?');
-  const userName = getUserName();
+  const description = 'What is the result of the expression?';
 
   const roundGenerator = () => {
     const firstNumber = getRandomInt(1, 20);
@@ -17,7 +36,7 @@ const brainCalc = () => {
     return cons(question, correctAnswer);
   };
 
-  const result = gameEngine(3, roundGenerator);
-  showResult(result, userName);
+  gameEngine(roundGenerator, description);
 };
+
 export default brainCalc;
