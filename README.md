@@ -17,4 +17,4 @@ Game brain-calc
 
 Game brain-gcd
 
-[![asciicast](https://asciinema.org/a/5mTyz86AB6hqcEIxHyYBl0iej.svg)](https://asciinema.org/a/5mTyz86AB6hqcEIxHyYBl0iej)ma
+[![asciicast](https://asciinema.org/a/5mTyz86AB6hqcEIxHyYBl0iej.svg)](https://asciinema.org/a/5mTyz86AB6hqcEIxHyYBl0iej)
