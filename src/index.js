@@ -29,6 +29,12 @@ const getGcd = (pair) => {
   }
   return getGcd(cons(cdr(pair), car(pair) % cdr(pair)));
 };
+const makeProgression = (start, step, length, hiddenNumber) => {
+  if (length - 1 === 0) {
+    return `${(hiddenNumber !== length) ? start : '..'}`;
+  }
+  return `${(hiddenNumber !== length) ? start : '..'} ${makeProgression(start + step, step, length - 1, hiddenNumber)}`;
+};
 const toString = n => `${n}`;
 
 const greeting = (description) => {
@@ -81,4 +87,5 @@ export {
   getRandomInt,
   showResult,
   getGcd,
+  makeProgression,
 };

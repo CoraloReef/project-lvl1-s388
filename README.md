@@ -18,3 +18,8 @@ Game brain-calc
 Game brain-gcd
 
 [![asciicast](https://asciinema.org/a/5mTyz86AB6hqcEIxHyYBl0iej.svg)](https://asciinema.org/a/5mTyz86AB6hqcEIxHyYBl0iej)
+
+
+Game brain-progression
+
+[![asciicast](https://asciinema.org/a/C8TzlVtL6yD4RNII30IMBC8td.svg)](https://asciinema.org/a/C8TzlVtL6yD4RNII30IMBC8td)
