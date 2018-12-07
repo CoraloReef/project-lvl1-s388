@@ -1,7 +1,29 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from 'hexlet-pairs';
 
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+const getRandomOperation = () => {
+  switch (getRandomInt(1, 4)) {
+    case 1:
+      return '+';
+    case 2:
+      return '-';
+    default:
+      return '*';
+  }
+};
+const resultExpression = (num1, num2, operation) => {
+  switch (operation) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    default:
+      return num1 * num2;
+  }
+};
 const isEven = n => n % 2 === 0;
+const toString = n => `${n}`;
 
 const greeting = (description) => {
   console.log('Welcome to the Brain Games!');
@@ -20,35 +42,36 @@ const getUserName = () => {
   return userName;
 };
 
-const gameEven = (n, userName) => {
-  if (n === 0) {
+const showResult = (result, userName) => {
+  if (result) {
     console.log(`Congratulations, ${userName}!`);
-    return;
+  } else {
+    console.log(`Let's try again, ${userName}!`);
   }
+};
 
-  const question = getRandomInt(1, 20);
-
-  console.log(`Question: ${question}`);
-
+const gameEngine = (n, generator) => {
+  if (n === 0) {
+    return true;
+  }
+  const questionAnswer = generator();
+  console.log(`Question: ${car(questionAnswer)}`);
   const answer = readlineSync.question('Your answer: ');
 
-  const correctAnswer = isEven(question) ? 'yes' : 'no';
-
-  if (answer === correctAnswer) {
+  if (answer === toString(cdr(questionAnswer))) {
     console.log('Correct!');
-    gameEven(n - 1, userName);
-    return;
+    return gameEngine(n - 1, generator);
   }
-  console.log(`Let's try again, ${userName}!`);
+  return false;
 };
 
-export const brainGames = () => {
-  greeting();
-  getUserName();
-};
-
-export const brainEven = () => {
-  greeting('Answer "yes" if number even otherwise answer "no".');
-  const userName = getUserName();
-  gameEven(3, userName);
+export {
+  gameEngine,
+  getUserName,
+  greeting,
+  isEven,
+  resultExpression,
+  getRandomOperation,
+  getRandomInt,
+  showResult,
 };
