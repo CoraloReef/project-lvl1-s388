@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { car, cdr } from 'hexlet-pairs';
+import { cons, car, cdr } from 'hexlet-pairs';
 
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 const getRandomOperation = () => {
@@ -23,6 +23,12 @@ const resultExpression = (num1, num2, operation) => {
   }
 };
 const isEven = n => n % 2 === 0;
+const getGcd = (pair) => {
+  if (cdr(pair) === 0) {
+    return car(pair);
+  }
+  return getGcd(cons(cdr(pair), car(pair) % cdr(pair)));
+};
 const toString = n => `${n}`;
 
 const greeting = (description) => {
@@ -74,4 +80,5 @@ export {
   getRandomOperation,
   getRandomInt,
   showResult,
+  getGcd,
 };
