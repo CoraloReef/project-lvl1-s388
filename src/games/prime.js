@@ -5,6 +5,7 @@ import { cons } from 'hexlet-pairs';
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
+  if (num <= 0) return false;
   const iter = (counter) => {
     if (counter === 1) {
       return true;
