@@ -7,10 +7,13 @@ const description = 'What number is missing in the progression?';
 const progressionLength = 10;
 
 const makeProgression = (firstNumber, step, length, hiddenPosition) => {
-  if (length - 1 === 0) {
-    return `${(hiddenPosition !== length) ? firstNumber : '..'}`;
-  }
-  return `${(hiddenPosition !== length) ? firstNumber : '..'} ${makeProgression(firstNumber + step, step, length - 1, hiddenPosition)}`;
+  const iter = (counter, acc) => {
+    if (counter === length) {
+      return `${(hiddenPosition !== counter) ? acc : '..'}`;
+    }
+    return `${(hiddenPosition !== counter) ? acc : '..'} ${iter(counter + 1, acc + step)}`;
+  };
+  return iter(1, firstNumber);
 };
 
 const roundGenerator = () => {
@@ -19,7 +22,7 @@ const roundGenerator = () => {
   const hiddenPosition = getRandomInt(1, 10);
   const question = makeProgression(firstNumber, step, progressionLength, hiddenPosition);
 
-  const correctAnswer = firstNumber + (progressionLength - hiddenPosition) * step;
+  const correctAnswer = firstNumber + (hiddenPosition - 1) * step;
   return cons(question, toString(correctAnswer));
 };
 
