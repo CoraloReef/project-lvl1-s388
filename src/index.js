@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from 'hexlet-pairs';
 
-const toString = n => `${n}`;
+const numberOfQuestions = 3;
 
 const gameEngine = (generator, description) => {
   console.log(description);
@@ -11,24 +11,27 @@ const gameEngine = (generator, description) => {
   console.log(`Hello, ${userName}!`);
   console.log();
 
-  const iter = (counter, acc) => {
+  const iter = (counter) => {
     if (counter === 0) {
       console.log(`Congratulations, ${userName}!`);
       return;
     }
     const questionAnswer = generator();
-    console.log(`Question: ${car(questionAnswer)}`);
+    const question = car(questionAnswer);
+    const correctAnswer = cdr(questionAnswer);
+
+    console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
 
-    if (answer === toString(cdr(questionAnswer))) {
+    if (answer === correctAnswer) {
       console.log('Correct!');
-      iter(counter - 1, acc);
+      iter(counter - 1);
     } else {
       console.log(`Let's try again, ${userName}!`);
     }
   };
 
-  iter(3, generator);
+  iter(numberOfQuestions);
 };
 
 export default gameEngine;
