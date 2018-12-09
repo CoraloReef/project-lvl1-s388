@@ -7,12 +7,12 @@ const description = 'Answer "yes" if given number is prime. Otherwise answer "no
 const isPrime = (num) => {
   if (num <= 1) return false;
   const iter = (counter) => {
-    if (counter === 1) {
+    if (counter === num) {
       return true;
     }
-    return (num % counter) ? iter(counter - 1) : false;
+    return (num % counter) ? iter(counter + 1) : false;
   };
-  return iter(num - 1);
+  return iter(2);
 };
 
 const roundGenerator = () => {
