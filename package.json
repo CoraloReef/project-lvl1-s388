@@ -1,6 +1,6 @@
 {
   "name": "brain-games-coraloreef",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Brain Games - Game That Train Your Mind",
   "keywords": [
     "brain",
@@ -25,14 +25,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CoraloReef/project-lvl1-s388.git"
+    "url": "git+https://github.com/CoraloReef/console-brain-games.git"
   },
   "author": "Gordeiko Viacheslav",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CoraloReef/project-lvl1-s388/issues"
+    "url": "https://github.com/CoraloReef/console-brain-games/issues"
   },
-  "homepage": "https://github.com/CoraloReef/project-lvl1-s388#readme",
+  "homepage": "https://github.com/CoraloReef/console-brain-games#readme",
   "dependencies": {
     "hexlet-pairs": "^1.0.8",
     "readline-sync": "^1.4.9"

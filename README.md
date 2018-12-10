@@ -1,4 +1,4 @@
-# Brain-games
+# project-lvl1-s388
 Консольная игра
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/bd5980f24b48e0616614/maintainability)](https://codeclimate.com/github/CoraloReef/project-lvl1-s388/maintainability)
