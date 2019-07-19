@@ -2,7 +2,6 @@
 Консольная игра
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/bd5980f24b48e0616614/maintainability)](https://codeclimate.com/github/CoraloReef/cli-brain-games/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/bd5980f24b48e0616614/test_coverage)](https://codeclimate.com/github/CoraloReef/cli-brain-games/test_coverage)
 [![Build Status](https://travis-ci.org/CoraloReef/cli-brain-games.svg?branch=master)](https://travis-ci.org/CoraloReef/cli-brain-games)
 
 
