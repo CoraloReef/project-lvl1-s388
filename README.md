@@ -1,5 +1,5 @@
 # console-brain-games
-Консольная игра
+Console game on Vanilla JS
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/bd5980f24b48e0616614/maintainability)](https://codeclimate.com/github/CoraloReef/cli-brain-games/maintainability)
 [![Build Status](https://travis-ci.org/CoraloReef/cli-brain-games.svg?branch=master)](https://travis-ci.org/CoraloReef/cli-brain-games)
